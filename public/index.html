@@ -1,21 +1,38 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Weather App</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌤️ AI Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
     <h1>🌤️ AI Weather App</h1>
-    <form id="weatherForm">
-      <input type="text" id="cityInput" placeholder="Enter city name" required />
-      <button type="submit">Get Weather</button>
-    </form>
-    <div id="result"></div>
+
+    <button id="toggleTheme">Toggle Dark Mode</button>
+
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+
+    <div id="spinner" class="spinner" style="display:none;"></div>
+
+    <div id="weatherResult" class="result-container" style="display:none;">
+      <h2 id="cityName"></h2>
+      <img id="weatherIcon" src="" alt="Weather Icon" />
+      <p><strong>Temperature:</strong> <span id="temperature"></span> °C</p>
+      <p><strong>Condition:</strong> <span id="condition"></span></p>
+      <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+      <p><strong>Wind Speed:</strong> <span id="wind"></span> km/h</p>
+      <p><strong>AI Tip:</strong> <span id="tip"></span></p>
+    </div>
+
+    <div class="recent">
+      <h3>Recent Searches</h3>
+      <ul id="recentList"></ul>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
